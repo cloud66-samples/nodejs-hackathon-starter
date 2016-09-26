@@ -10,5 +10,5 @@ RUN npm config set strict-ssl false
 RUN npm config set registry $CUSTOM_REGISTRY
 
 ADD . $APP_HOME
-RUN npm install --loglevel http
+RUN npm install --loglevel silly
 
