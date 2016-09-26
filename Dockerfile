@@ -7,9 +7,8 @@ WORKDIR $APP_HOME
 
 # ADD CUSTOM REGISTRY HERE IF REQUIRED
 RUN npm config set strict-ssl false
-RUN npm config set proxy $CUSTOM_REGISTRY
-RUN npm config set https-proxy $CUSTOM_REGISTRY
+RUN npm config set registry $CUSTOM_REGISTRY
 
 ADD . $APP_HOME
-RUN npm install
+RUN npm install --loglevel http
 
